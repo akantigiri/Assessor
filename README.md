@@ -3,7 +3,7 @@
 Assessor is an Android based application built for easing the task of online
 evaluation. Assessor implements seperate channels for each course and each course has its own activites such as chat discussions, assignments to name a few. This is built as a course project for the course CSN-254.
 ## Requirements
-* Android Studio(IDE)==4.1 or later
+* Android Studio(IDE) - 4.1 or later
 * JDK
 * Other required configurations.
 ## Instructions to run
