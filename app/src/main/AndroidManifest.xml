@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.firebase.udacity.friendlychat">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".myapplication"></activity>
+        <activity android:name=".assignements" />
+        <activity android:name=".chat" />
+        <activity android:name=".AttemptTest" />
+        <activity android:name=".tests" />
+        <activity android:name=".createquiz" />
+        <activity android:name=".coursehome" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".Registrationactivity" />
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".ResultsAdmin" />
+        <activity android:name=".ResultsAdminDetailed" />
+    </application>
+
+</manifest>

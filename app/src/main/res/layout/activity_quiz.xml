@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity">
+    <ListView
+        android:id="@+id/messageListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:background="@drawable/backgrnd"
+        android:divider="@android:color/transparent"
+        android:listSelector="#757575"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+
+        tools:layout_backgroundColor="@color/colorTitle"
+        tools:listitem="@layout/item_message" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/zimb"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/lau"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/photoPickerButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:drawable/ic_menu_gallery" />
+
+            <EditText
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Duration"
+                android:textColor="@color/colorTitle" />
+
+            <Button
+                android:id="@+id/settimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+
+                android:text="Set"
+                android:textColor="@color/colorTitle" />
+
+            <Button
+                android:id="@+id/Quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+
+                android:text="Quiz"
+                android:textColor="@color/colorTitle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/messageEditTextques"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Question"
+                android:textColor="@color/colorTitle" />
+
+            <EditText
+                android:id="@+id/messageEditTextopA"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Option-A"
+                android:textColor="@color/colorTitle" />
+
+            <EditText
+                android:id="@+id/messageEditTextopB"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Option-B"
+                android:textColor="@color/colorTitle" />
+
+            <EditText
+                android:id="@+id/messageEditTextopC"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Option-C"
+                android:textColor="@color/colorTitle" />
+
+            <EditText
+                android:id="@+id/messageEditTextopD"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Option-D"
+                android:textColor="@color/colorTitle" />
+
+            <EditText
+                android:id="@+id/messageEditTextcrctop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Correct Answer"
+                android:textColor="@color/colorTitle" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="64dp"
+                android:paddingTop="8dp"
+                android:text="00:00:00"
+                android:textColor="@color/colorTitle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoute"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/finishQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:enabled="false"
+                android:text="Submit"
+                android:textColor="@color/colorTitle" />
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:enabled="false"
+                android:text="@string/send_button_label"
+                android:textColor="@color/colorTitle" />
+
+            <Button
+                android:id="@+id/Assgn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Assignment "
+                android:textColor="@color/colorTitle"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+
+</RelativeLayout>

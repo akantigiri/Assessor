@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <item
+        android:id="@+id/ClearPoll"
+        android:title="Clear Poll"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/CreatePoll"
+        android:title="Create Poll"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/RefreshPoll"
+        android:title="Refresh Poll"
+        app:showAsAction="never"
+        />
+
+</menu>
