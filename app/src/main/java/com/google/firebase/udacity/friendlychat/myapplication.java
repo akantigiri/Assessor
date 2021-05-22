@@ -495,15 +495,17 @@ public class myapplication extends AppCompatActivity {
         });
 
 //Toast.makeText(MainActivity.this,"Hello",Toast.LENGTH_SHORT).show();
-        mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
+       mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String lo = "";
+                String lo = "";String gz="0o0o0o0";String oh;
                 for (DataSnapshot esnapshot : snapshot.getChildren()) {
                     lo = esnapshot.child("name").getValue(String.class);
                     // Log.v("TAGE","DO"+lo);
+                    if(!lo.equals("oolad")){gz=esnapshot.child("text").getValue(String.class);}
                     if (lo != null) { //Log.v("TAGE", lo);
-                        String ufo =username;
+                        String ufo = MainActivity.mUsername;
+                        if(ufo==null){continue;}
                         ufo.trim();
                         // Log.v("TAGE", ufo);
                         if (lo.equals(ufo)) {
@@ -515,101 +517,7 @@ public class myapplication extends AppCompatActivity {
                 }//Log.v("TAGE","BOO"+yw);
                 String g = "";
                 String u = "";
-                long y = 0, w = 0;
-                for (int i = 0; i < lo.length(); i++) {
-                    u = "";
-                    u = u + lo.charAt(i);
-                    if (!u.equals("o")) {
-                        g = g + lo.charAt(i);
-                    } else {
-                        y = i;
-                        break;
-                    }
-
-                }
-                if (g.equals("")) {
-                    return;
-                }
-                count1 = Integer.parseInt(g);
-                g = "";
-                u = "";
-                for (int i = (int) y + 1; i < lo.length(); i++) {
-                    u = "";
-                    u = u + lo.charAt(i);
-                    if (!u.equals("o")) {
-                        g = g + lo.charAt(i);
-                    } else {
-                        y = i;
-                        break;
-                    }
-
-                }
-                count2 = Integer.parseInt(g);
-                g = "";
-                u = "";
-                for (int i = (int) (y + 1); i < lo.length(); i++) {
-                    u = "";
-                    u = u + lo.charAt(i);
-                    if (!u.equals("o")) {
-                        g = g + lo.charAt(i);
-                    } else {
-                        y = i;
-                        break;
-                    }
-
-                }
-                count3 = Integer.parseInt(g);
-                g = "";
-                u = "";
-                for (int i = (int) (y + 1); i < lo.length(); i++) {
-                    u = "";
-                    u = u + lo.charAt(i);
-                    if (!u.equals("o")) {
-                        g = g + lo.charAt(i);
-                    } else {
-                        y = i;
-                        break;
-                    }
-
-                }
-                count4 = Integer.parseInt(g);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        });
-
-        Query qury = mMessagesDatabaseReference.orderByKey().limitToLast(1);
-        qury.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String lo = "";
-                for (DataSnapshot esnapshot : snapshot.getChildren()) {
-                    lo = esnapshot.child("name").getValue(String.class);
-                    Log.v("TAGE", "DO" + lo);
-                    if (lo != null) {
-                        Log.v("TAGE", lo);
-                        String ufo = username;
-                        if(ufo==null){continue;}
-                        ufo.trim();
-                        Log.v("TAGE", ufo);
-                        if (lo.equals(ufo)) {
-                            yw = false;
-                        }
-                    }
-                    lo = esnapshot.child("text").getValue(String.class);
-                    if (lo != null) {
-                        Log.v("TAGE", lo);
-                    }
-                }
-                Log.v("TAGE", "BOO" + yw);
-                String g = "";
-                String u = "";
-                long y = 0, w = 0;
+                long y = 0, w = 0;lo=gz;
                 for (int i = 0; i < lo.length(); i++) {
                     u = "";
                     u = u + lo.charAt(i);
