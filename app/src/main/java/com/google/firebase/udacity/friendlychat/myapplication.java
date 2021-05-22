@@ -97,7 +97,7 @@ public class myapplication extends AppCompatActivity {
         c = findViewById(R.id.edoptionb);
         d = findViewById(R.id.edoptionc);
         FirebaseApp.initializeApp(this);
-       username=FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+        username = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child(p);
@@ -105,7 +105,7 @@ public class myapplication extends AppCompatActivity {
 
         pMessagesDatabaseReference = mFirebaseDatabase.getReference().child(gz);
         pMessagesDatabaseReference = mFirebaseDatabase.getReference("").child(gz);
-        String nithin = SecondActivity.g + " " + coursehome.x;
+        String nithin = SecondActivity.g + " " + "Polls";
         setTitle(nithin);
         nMessagesDatabaseReference = mFirebaseDatabase.getReference().child(q);
         nMessagesDatabaseReference = mFirebaseDatabase.getReference("").child(q);
@@ -325,7 +325,7 @@ public class myapplication extends AppCompatActivity {
                 Log.d("TAGE", h);
                 formatter = new SimpleDateFormat("h:mm a");
                 huo = formatter.format(new Date());
-                FriendlyMessage obj = new FriendlyMessage(h, "" +username, null, huo);
+                FriendlyMessage obj = new FriendlyMessage(h, "" + username, null, huo);
                 mMessagesDatabaseReference.push().setValue(obj);
                 SharedPreferences.Editor esy = s.edit();
                 esy.remove("user");
@@ -376,7 +376,7 @@ public class myapplication extends AppCompatActivity {
                 Log.d("TAGE", h);
                 formatter = new SimpleDateFormat("h:mm a");
                 huo = formatter.format(new Date());
-                FriendlyMessage obj = new FriendlyMessage(h, "" +username, null, huo);
+                FriendlyMessage obj = new FriendlyMessage(h, "" + username, null, huo);
                 mMessagesDatabaseReference.push().setValue(obj);
                 SharedPreferences.Editor esy = s.edit();
                 esy.remove("user");
@@ -495,17 +495,23 @@ public class myapplication extends AppCompatActivity {
         });
 
 //Toast.makeText(MainActivity.this,"Hello",Toast.LENGTH_SHORT).show();
-       mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
+        mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String lo = "";String gz="0o0o0o0";String oh;
+                String lo = "";
+                String gz = "0o0o0o0";
+                String oh;
                 for (DataSnapshot esnapshot : snapshot.getChildren()) {
                     lo = esnapshot.child("name").getValue(String.class);
                     // Log.v("TAGE","DO"+lo);
-                    if(!lo.equals("oolad")){gz=esnapshot.child("text").getValue(String.class);}
+                    if (!lo.equals("oolad")) {
+                        gz = esnapshot.child("text").getValue(String.class);
+                    }
                     if (lo != null) { //Log.v("TAGE", lo);
-                        String ufo = MainActivity.mUsername;
-                        if(ufo==null){continue;}
+                        String ufo =username;
+                        if (ufo == null) {
+                            continue;
+                        }
                         ufo.trim();
                         // Log.v("TAGE", ufo);
                         if (lo.equals(ufo)) {
@@ -515,9 +521,11 @@ public class myapplication extends AppCompatActivity {
                     lo = esnapshot.child("text").getValue(String.class);
                     //if(lo != null){ Log.v("TAGE", lo);}
                 }//Log.v("TAGE","BOO"+yw);
+                Log.v("TAGE",gz);
                 String g = "";
                 String u = "";
-                long y = 0, w = 0;lo=gz;
+                long y = 0, w = 0;
+                lo = gz;
                 for (int i = 0; i < lo.length(); i++) {
                     u = "";
                     u = u + lo.charAt(i);
@@ -760,6 +768,15 @@ public class myapplication extends AppCompatActivity {
                 lo.setVisibility(View.VISIBLE);
                 return true;
             case R.id.RefreshPoll:
+                h = "" + count1;
+                h = h + "o";
+                h = h + count2;
+                h = h + "o";
+                h = h + count3;
+                h = h + "o";
+                h = h + count4;
+                FriendlyMessage obaj = new FriendlyMessage(h, "oolad", null, huo);
+                mMessagesDatabaseReference.push().setValue(obaj);
                 if (!yw) {
                     calculatePercentage();
                 } else {
