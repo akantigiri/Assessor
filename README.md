@@ -6,6 +6,11 @@ evaluation. Assessor implements seperate channels for each course and each cours
 * Android Studio(IDE) - 4.1 or later
 * JDK
 * Other required configurations.
+## Instructions to downlaod the app
+* Download app-debug.apk file on your phone
+* Then open it and allow to install
+* Now you can run assessor app on your phone
+
 ## Instructions to run
 * Clone the repository
 ```
@@ -14,6 +19,14 @@ git clone https://github.com/akantigiri/Assessor.git
 * Import the project on Android Studio.
 * You can choose to run the application either by connecting a physical device via USB or run it on an AVD (Android Virtual Device) with the help of an Android Emulator.
 * Run the application on your configured device.
+## Instructions to view code on github itself
+* For Java Files
+* app->src->main->java->com->google->firebase->udacity->friendlychat
+* For XML files
+* app->src->main->res->layout
+* For Menu files
+* app->src->main->res->menu
+* Most of the remaining files are also present in res folder only
 ## License
 ```
 Copyright Akanti Giri
